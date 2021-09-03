@@ -24,7 +24,7 @@ CREATE TABLE employee (
     manager_id INT,
     role_id INT,
     FOREIGN KEY (role_id) REFERENCES role(id),
-    FOREIGN KEY (manager_id) REFERENCES manager(id)
+    FOREIGN KEY (manager_id) REFERENCES employee(id)
 );
 
 INSERT INTO department (name)
@@ -53,3 +53,23 @@ VALUE ("Legal Team Lead", 250000, 4);
 INSERT INTO role (title, salary, department_id)
 VALUE ("Lawyer", 190000, 4);
 
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("John", "Doe", null, 1);
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Mike", "Chan", 1, 2);
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Ashley", "Rodriguez", null, 3);
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Kevin", "Tupik", 3, 4);
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Kunal", "Singh", null, 5);
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Malia", "Brown", 5, 6);
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Sarah", "Lourd", null, 7);
+INSERT INTO employee (first_name, last_name, manager_id, role_id)
+VALUE ("Tom", "Allen", 7, 8);
+
+SELECT * FROM department;
+SELECT * FROM employee;
+SELECT * FROM role;
