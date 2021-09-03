@@ -13,12 +13,10 @@ Inquirer
 MySQL2
 console.table
 
-Below is a screenshot of what the user could expect to see:
-
-
+Since the application is accessed through the command line interface, there is no deployable link - however, attached is a video of the application
 
 Below is a quick video showing the application's function:
 
-
+https://drive.google.com/file/d/1LIfu03qCKA4_I9maQ9mV1o29pTMc-pUr/view
 
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
