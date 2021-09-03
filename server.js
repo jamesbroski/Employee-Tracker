@@ -213,3 +213,62 @@ function updateEmployee() {
     }
   );
 }
+
+function addRole() {
+  connection.query(
+    "SELECT role.title AS Title, role.salary AS Salary FROM role",
+    function (err, res) {
+      inquirer
+        .prompt([
+          {
+            type: "input",
+            name: "Title",
+            message: "What is the role's Title?",
+          },
+          {
+            type: "input",
+            name: "Salary",
+            message: "What is the role's Salary?",
+          },
+        ])
+        .then(function (res) {
+          connection.query(
+            "INSERT INTO role SET ?",
+            {
+              title: res.Title,
+              salary: res.Salary,
+            },
+            function (err) {
+              if (err) throw err;
+              console.table(res);
+              startPrompt();
+            }
+          );
+        });
+    }
+  );
+}
+
+function addDepartment() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "What department would you like to add?",
+      },
+    ])
+    .then(function (res) {
+      var query = connection.query(
+        "INSERT INTO department SET ?",
+        {
+          name: res.name,
+        },
+        function (err) {
+          if (err) throw err;
+          console.table(res);
+          startPrompt();
+        }
+      );
+    });
+}
